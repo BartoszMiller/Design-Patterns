@@ -17,7 +17,7 @@ public class Main {
         double afterTaxesUK = calculatorUK.calculateNetIncomeFor(100000);
         System.out.println("In UK, your net income would be: " + afterTaxesUK);
 
-        // strategy 1 - tax in PL
+        // strategy 2 - tax in PL
         TaxCalculator calculatorPL = new TaxCalculator(new TaxStrategyInPoland());
         double afterTaxesPoland = calculatorPL.calculateNetIncomeFor(100000);
         System.out.println("In Poland, your net income would be: " + afterTaxesPoland);
