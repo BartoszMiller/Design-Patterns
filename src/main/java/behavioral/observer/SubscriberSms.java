@@ -2,11 +2,9 @@ package behavioral.observer;
 
 public class SubscriberSms implements Subscriber {
 
-    private EmailSubscription subscription;
     private String phoneNumber;
 
-    public SubscriberSms(EmailSubscriptionRyanairCheapFlights subscription, String phoneNumber) {
-        this.subscription = subscription;
+    public SubscriberSms(String phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
 
@@ -16,7 +14,20 @@ public class SubscriberSms implements Subscriber {
     }
 
     @Override
-    public void resignFromSubscription() {
-        subscription.removeSubscriber(this);
+    public boolean equals(Object o) {
+        if (this == o)
+            return true;
+        if (o == null || getClass() != o.getClass())
+            return false;
+
+        SubscriberSms that = (SubscriberSms) o;
+
+        return !(phoneNumber != null ? !phoneNumber.equals(that.phoneNumber) : that.phoneNumber != null);
+
+    }
+
+    @Override
+    public int hashCode() {
+        return phoneNumber != null ? phoneNumber.hashCode() : 0;
     }
 }

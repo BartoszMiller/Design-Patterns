@@ -5,6 +5,7 @@ import java.util.List;
 
 public class EmailSubscriptionRyanairCheapFlights implements EmailSubscription {
 
+    private String latestOffer;
     private List<Subscriber> subscribers = new ArrayList<>();
 
     @Override
@@ -20,12 +21,13 @@ public class EmailSubscriptionRyanairCheapFlights implements EmailSubscription {
     @Override
     public void notifySubscribers() {
         for (Subscriber subscriber : subscribers) {
-            subscriber.sendMessage("Latest offer from Ryanair");
+            subscriber.sendMessage(latestOffer);
         }
     }
 
-    public void newCheapPricesOfferReleased() {
-        System.out.println("Releasing new prices for flights!");
+    public void setLatestOffer(String latestOffer) {
+        System.out.println("****** New offers has been prepared by Ryanair ******");
+        this.latestOffer = latestOffer;
         notifySubscribers();
     }
 }

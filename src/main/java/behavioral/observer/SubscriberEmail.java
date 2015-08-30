@@ -2,17 +2,10 @@ package behavioral.observer;
 
 public class SubscriberEmail implements Subscriber {
 
-    private EmailSubscription subscription;
     private String email;
 
-    public SubscriberEmail(EmailSubscription subscription, String email){
-        this.subscription = subscription;
+    public SubscriberEmail(String email){
         this.email = email;
-    }
-
-    @Override
-    public void resignFromSubscription() {
-        subscription.removeSubscriber(this);
     }
 
     @Override

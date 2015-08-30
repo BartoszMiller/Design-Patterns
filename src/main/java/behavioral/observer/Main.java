@@ -15,14 +15,10 @@ public class Main {
 
         EmailSubscriptionRyanairCheapFlights subscription = new EmailSubscriptionRyanairCheapFlights();
 
-        Subscriber subscriberRegular = new SubscriberEmail(subscription, "bill@gmail.com");
-        Subscriber subscriberPremium = new SubscriberSms(subscription,  "001312567891");
+        subscription.addSubscriber(new SubscriberEmail("bill@gmail.com"));
+        subscription.setLatestOffer("Releasing new prices for flights in April!");
 
-        subscription.addSubscriber(subscriberRegular);
-        subscription.addSubscriber(subscriberPremium);
-        subscription.newCheapPricesOfferReleased();
-
-        subscriberRegular.resignFromSubscription();
-        subscription.newCheapPricesOfferReleased();
+        subscription.addSubscriber(new SubscriberSms("001312567891"));
+        subscription.setLatestOffer("Releasing new prices for flights in May!");
     }
 }
