@@ -5,7 +5,9 @@ import java.util.List;
 
 public class EmailSubscriptionRyanairCheapFlights implements EmailSubscription {
 
+    // Subject/observable holds state. Once it changes, observers are updated
     private String latestOffer;
+
     private List<Subscriber> subscribers = new ArrayList<>();
 
     @Override

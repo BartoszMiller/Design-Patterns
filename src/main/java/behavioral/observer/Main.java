@@ -8,7 +8,7 @@ public class Main {
          *                          OBSERVER
          *  EmailSubscriptionRyanairCheapFlights is an observable class which
          *  sends e-mails and text messages to its subscribers. There are two
-         *  types of subscribers (Regular and Premium). Every subscriber is
+         *  types of subscribers (E-mail and Sms). Every subscriber is
          *  an observer and because of that both types of subscribers must implement
          *  the same interface.
          */
